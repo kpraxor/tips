@@ -91,7 +91,8 @@ RESTClient allows you to view the HTTPS response header as well as the response 
 * Highlight
 * Preview
 
-On the Body (Highlight) tab, it'
+On the Body (Highlight) tab, it's easy to see our access token id, as well as a service catalog with lots of great information about all of the service endpoints.  Notice the token ID is the same as above from the v1.0 API, so we can use the existing header to call the Cloud Servers API.  
+![v2-token][v2-token]
 
 
 
@@ -112,4 +113,5 @@ On the Body (Highlight) tab, it'
 [accept-json-header]: /img/accept-json-header.png (json header)
 [post-auth-json]: /img/post-auth-json.png (post auth json)
 [content-type-json]: /img/content-type-json.png (content-type json header)
+[v2-token] /img/v2-token.pgn (v2 token response)
 
