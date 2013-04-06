@@ -2,9 +2,8 @@
 
 Command-line tools like [curl][curl] allow you to sent HTTP(S) requests to [Rackspace's Public Cloud API][api], in order to interact directly.  But why not also try [RESTClient][plugin], a Firefox plugin?
 
-### Install RESTClient Plugin
-You can install the RESTClient plugin from [addons.mozilla.org][plugin].  Restart Firefox, and you'll see red icon with a circle appear. ![RESTClient Icon][restclient-icon]
-
+## Install RESTClient Plugin
+You can install the RESTClient plugin from [addons.mozilla.org][plugin].  Restart Firefox, and you'll see the red icon with a circle appear. ![RESTClient Icon][restclient-icon]
 
 ### The Interface 
 Click the icon to open RESTClient in a new tab.
@@ -24,7 +23,7 @@ By presenting your API key, along with your username, to the Rackspace Cloud Aut
 RESTClient makes it really easy to do this!
 
 ### Create Some Headers
-Select Headers-> Custom Header from the top menu
+Select Headers-> Custom Header from the top menu  
 ![custom-header.png][custom-header]
 
 Let's keep it simple.  Create a custom header
@@ -44,11 +43,26 @@ We'll also need our account username, which we'll place in another custom header
 
 That's all we need to send our username and API key to the authentication endpoint, and receive our authentication token, which we'll use for the rest of our API calls.  The US endpoint is
 
-`https://identity.api.rackspacecloud.com/v2.0/`
+`https://identity.api.rackspacecloud.com/v1.0/`
 
 So, make sure your "Method" is set to "GET", enter the endpoint, and you should have 2 headers listed.  Click "SEND"    
 ![get-auth-token][get-auth-token]
 
+We're hoping for a `200 OK` status code in our response header.  Notice the `X-Auth-Token` is returned with a token value.  
+![response-header][response-header]
+
+
+Let's add a custom header that contains this token via copy/paste  
+![x-auth-token-header][x-auth-token-header]
+
+
+RESTClient allows you to view the HTTPS response header as well as the response body in 3 viewing modes
+
+* RAW
+* Highlight
+* Preview
+
+On the Body (Highlight) tab, 
 
 
 
@@ -63,5 +77,8 @@ So, make sure your "Method" is set to "GET", enter the endpoint, and you should 
 [x-auth-key-header]: /img/x-auth-key-header.png (create X-Auth-Key header)
 [x-auth-user-header]: /img/x-auth-user-header.png (create X-Auth-User header)
 [get-auth-token]: /img/get-auth-token.png (get auth-token)
+[x-auth-token-header]: /img/x-auth-token-header.png (create X-Auth-Token header)
+[response-header]: /img/response-header.png (response header)
+
 
 
