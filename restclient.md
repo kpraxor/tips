@@ -51,7 +51,7 @@ So, make sure your "Method" is set to "GET", enter the endpoint, and you should 
 We're hoping for a `200 OK` status code in our response header.  Notice the `X-Auth-Token` is returned with a token value.  
 ![response-header][response-header]
 
-
+### Use the Auth Token in a Header for Easy Re-Use
 Let's add a custom header that contains this token via copy/paste  
 ![x-auth-token-header][x-auth-token-header]
 
@@ -84,7 +84,7 @@ Make sure to select "POST" and click "SEND" to
 `https://identity.api.rackspacecloud.com/v2.0/tokens`  
 ![post-auth-json][post-auth-json]
 
-### Review the Response Body
+## Review the Response Body
 RESTClient allows you to view the HTTPS response header as well as the response body in 3 viewing modes
 
 * RAW
@@ -93,6 +93,14 @@ RESTClient allows you to view the HTTPS response header as well as the response 
 
 On the Body (Highlight) tab, it's easy to see our access token id, as well as a service catalog with lots of great information about all of the service endpoints.  Notice the token ID is the same as above from the v1.0 API, so we can use the existing header to call the Cloud Servers API.  
 ![v2-token][v2-token]
+
+### A Simple GET request - DNS
+
+Let's list the DNS domains configured in Cloud DNS, with just a `GET` and the `X-Auth-Token` header.  Our API target URI is:  
+`https://dns.api.rackspacecloud.com/v1.0/548979/domains`  
+[get-domains][get-domains]
+
+
 
 
 
@@ -113,5 +121,6 @@ On the Body (Highlight) tab, it's easy to see our access token id, as well as a 
 [accept-json-header]: /img/accept-json-header.png (json header)
 [post-auth-json]: /img/post-auth-json.png (post auth json)
 [content-type-json]: /img/content-type-json.png (content-type json header)
-[v2-token] /img/v2-token.pgn (v2 token response)
+[v2-token]: /img/v2-token.png (v2 token response)
+[get-domains]: /img/get-domains.png (get domains)
 
