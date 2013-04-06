@@ -15,29 +15,40 @@ Click the icon to open RESTClient in a new tab.
 
 ## Authentication
 In order to talk to the RESTful API, you'll need 2 Keys:
-1. Your Rackspace Cloud API Key
+
+1. Your Rackspace Cloud API Key  
 2. An authentication token
+
 By presenting your API key, along with your username, to the Rackspace Cloud Auth endpoints, you'll receive a JSON or XML response containing the auth token, which will be good for 24 hours.
 
 RESTClient makes it really easy to do this!
 
 ### Create Some Headers
 Select Headers-> Custom Header from the top menu
-[custom-header.png][custom-header]
+![custom-header.png][custom-header]
 
-Let's keep it simple.  Create a custom header  
+Let's keep it simple.  Create a custom header
+
 `X-Auth-Key`  
+
 and paste your API Key into the Value box, select "Save to favorite" and click "Okay"
 ![x-auth-key-header][x-auth-key-header]
-We'll also need our account username, which we'll place in another custom header  
-`X-Auth-User`  
+
+We'll also need our account username, which we'll place in another custom header
+
+`X-Auth-User`
+
 ![x-auth-user-header][x-auth-user-header]
 
-That's all we need to send our username and API key to the authentication endpoint, and receive our authentication token, which we'll use for the rest of our API calls.  The US endpoint is  
+### GET the Auth Token
+
+That's all we need to send our username and API key to the authentication endpoint, and receive our authentication token, which we'll use for the rest of our API calls.  The US endpoint is
+
 `https://identity.api.rackspacecloud.com/v2.0/`
 
-So, make sure your "Method" is set to "GET", enter the endpoint, and you should have 2 headers listed.  Click "SEND"  
+So, make sure your "Method" is set to "GET", enter the endpoint, and you should have 2 headers listed.  Click "SEND"    
 ![get-auth-token][get-auth-token]
+
 
 
 
