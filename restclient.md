@@ -71,7 +71,8 @@ You can use either the following combinations
 Since we've already been using the API key, I'll use that.  If you'd rather use your username and password, refer to the [Authentication Request][auth-request-api-doc] section of our API guide at [docs.rackspce.com][api]
 
 ### POST to /tokens
-Replace the `username` value `MyRackspaceAcct` with your username and the `apiKey` value `0000000000000000000` with your API key, and paste the JSON "auth" object into the Request Body  
+Replace the `username` value `MyRackspaceAcct` below with your username and the `apiKey` value `0000000000000000000` with your API key, and paste the JSON "auth" object into the Request Body
+
 `{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"MyRackspaceAcct", "apiKey":"0000000000000000000"}}}`
 
 Before we `POST` this, let's add another header to tell the API we want a JSON response:
@@ -80,8 +81,10 @@ Before we `POST` this, let's add another header to tell the API we want a JSON r
 and one that indicates we'll be sending a JSON request:
 ![content-type-json][content-type-json]
 
-Make sure to select "POST" and click "SEND" to  
-`https://identity.api.rackspacecloud.com/v2.0/tokens`  
+Make sure to select "POST" and click "SEND" to
+
+`https://identity.api.rackspacecloud.com/v2.0/tokens`
+
 ![post-auth-json][post-auth-json]
 
 ## Review the Response Body
@@ -102,7 +105,8 @@ Let's list the DNS domains configured in Cloud DNS, with just a `GET` and the `X
 
 Our API target URI is:
 
-`https://dns.api.rackspacecloud.com/v1.0/548979/domains`  
+`https://dns.api.rackspacecloud.com/v1.0/548979/domains`
+
 ![get-domains][get-domains]
 
 
