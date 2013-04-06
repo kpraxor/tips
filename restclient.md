@@ -2,8 +2,7 @@
 
 Command-line tools like [curl][curl] allow you to sent HTTP(S) requests to [Rackspace's Public Cloud API][api], in order to interact directly.  But why not also try [RESTClient][plugin], a Firefox plugin?
 
-You can install the RESTClient plugin from [addons.mozilla.org][plugin].  Restart Firefox, and you'll see red icon with a circle appear.  
-![RESTClient Icon][restclient-icon]
+You can install the RESTClient plugin from [addons.mozilla.org][plugin].  Restart Firefox, and you'll see red icon with a circle appear. ![RESTClient Icon][restclient-icon]
  
 Click the icon to open RESTClient in a new tab.
 
