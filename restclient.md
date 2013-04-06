@@ -100,14 +100,15 @@ On the Body (Highlight) tab, it's easy to see our access token id, as well as a 
 
 Let's list the DNS domains configured in Cloud DNS, with just a `GET` and the `X-Auth-Token` header, but request in JSON format with the `Accept: application/json` header.
 
-Our API target URI is:  
+Our API target URI is:
+
 `https://dns.api.rackspacecloud.com/v1.0/548979/domains`  
 ![get-domains][get-domains]
 
 
 # Summary
 
-We explored the use of RESTClient for talking directly to the Rackspace Cloud's RESTful API.  Using just a cloud account username and API key, we were able to
+We explored the use of RESTClient for talking directly to the Rackspace Cloud's RESTful API.  Using just a cloud account username and API key, we were able to:
 
 * authenticate against the identity service
 * acquire an auth token
