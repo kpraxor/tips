@@ -1,4 +1,5 @@
-tips
-====
+# Tips Rep
 
-weekly tips
+## Repo for weekly cloud tips and blog publication
+
+-kp
