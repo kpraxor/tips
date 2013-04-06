@@ -55,6 +55,14 @@ We're hoping for a `200 OK` status code in our response header.  Notice the `X-A
 Let's add a custom header that contains this token via copy/paste  
 ![x-auth-token-header][x-auth-token-header]
 
+Now we can clear our headers using the "Remove Headers" button, and just have to send the `X-Auth-Token` to interact with the cloud service APIs.
+
+> Note that to keep things simple, we authenticated against the API v1.0, which supported the `HTTP GET` request, along with `X-Auth-User` and `X-Auth-Key` header values.  In v2.0 of the authentication API, this method is deprecated, so we'll have to instead use an `HTTP POST` request to `/tokens`
+
+
+
+
+
 
 RESTClient allows you to view the HTTPS response header as well as the response body in 3 viewing modes
 
