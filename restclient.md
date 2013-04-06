@@ -59,24 +59,46 @@ Now we can clear our headers using the "Remove Headers" button, and just have to
 
 > Note that to keep things simple, we authenticated against the API v1.0, which supported the `HTTP GET` request, along with `X-Auth-User` and `X-Auth-Key` header values.  In v2.0 of the authentication API, this method is deprecated, so we'll have to instead use an `HTTP POST` request to `/tokens`
 
+## API v2.0
 
+`HTTP POST` requests to RESTful APIs are used to send request bodies, containing XML or JSON data.  To repeat our authentication exercise against V2.0 of the API, let's use JSON.
 
+You can use either the following combinations
 
+* username and password
+* username and API key
 
+Since we've already been using the API key, I'll use that.  If you'd rather use your username and password, refer to the [Authentication Request][auth-request-api-doc] section of our API guide at [docs.rackspce.com][api]
 
+### POST to /tokens
+Replace the `username` value `MyRackspaceAcct` with your username and the `apiKey` value `0000000000000000000` with your API key, and paste the JSON "auth" object into the Request Body  
+`{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"MyRackspaceAcct", "apiKey":"0000000000000000000"}}}`
+
+Before we `POST` this, let's add another header to tell the API we want a JSON response:
+![accept-json-header][accept-json-header]
+
+and one that indicates we'll be sending a JSON request:
+![content-type-json][content-type-json]
+
+Make sure to select "POST" and click "SEND" to  
+`https://identity.api.rackspacecloud.com/v2.0/tokens`  
+![post-auth-json][post-auth-json]
+
+### Review the Response Body
 RESTClient allows you to view the HTTPS response header as well as the response body in 3 viewing modes
 
 * RAW
 * Highlight
 * Preview
 
-On the Body (Highlight) tab, 
+On the Body (Highlight) tab, it'
 
 
 
 [api]:http://docs.rackspace.com/ (API Docs)
 [curl]:http://curl.haxx.se/ (curl.haxx.se)
 [plugin]: https://addons.mozilla.org/en-us/firefox/addon/restclient/ (RestClient Plugin)
+[auth-request-api-doc]:http://docs.rackspace.com/servers/api/v2/cs-devguide/content/curl_auth.html (cloud servers dev guide)
 
 
 [restclient-icon]: /img/restclient-icon.png (RestClient Icon)
@@ -87,6 +109,7 @@ On the Body (Highlight) tab,
 [get-auth-token]: /img/get-auth-token.png (get auth-token)
 [x-auth-token-header]: /img/x-auth-token-header.png (create X-Auth-Token header)
 [response-header]: /img/response-header.png (response header)
-
-
+[accept-json-header]: /img/accept-json-header.png (json header)
+[post-auth-json]: /img/post-auth-json.png (post auth json)
+[content-type-json]: /img/content-type-json.png (content-type json header)
 
