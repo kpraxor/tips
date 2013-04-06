@@ -91,24 +91,38 @@ RESTClient allows you to view the HTTPS response header as well as the response 
 * Highlight
 * Preview
 
-On the Body (Highlight) tab, it's easy to see our access token id, as well as a service catalog with lots of great information about all of the service endpoints.  Notice the token ID is the same as above from the v1.0 API, so we can use the existing header to call the Cloud Servers API.  
+On the Body (Highlight) tab, it's easy to see our access token id, as well as a service catalog with lots of great information about all of the service endpoints.  Notice the token ID is the same as above from the v1.0 API, so we can use the existing header to call the Cloud DNS API.  
 ![v2-token][v2-token]
+
+
 
 ### A Simple GET request - DNS
 
-Let's list the DNS domains configured in Cloud DNS, with just a `GET` and the `X-Auth-Token` header.  Our API target URI is:  
+Let's list the DNS domains configured in Cloud DNS, with just a `GET` and the `X-Auth-Token` header, but request in JSON format with the `Accept: application/json` header.
+
+Our API target URI is:  
 `https://dns.api.rackspacecloud.com/v1.0/548979/domains`  
-[get-domains][get-domains]
+![get-domains][get-domains]
 
 
+# Summary
 
+We explored the use of RESTClient for talking directly to the Rackspace Cloud's RESTful API.  Using just a cloud account username and API key, we were able to
+
+* authenticate against the identity service
+* acquire an auth token
+* see the difference between v1.0 and v2.0 of the API
+* obtain a service catalog
+* query a service endpoint (Cloud DNS) for domain information
+
+RESTClient offers an easy to use and interactive way to work with the Rackspace API, and can be a great learning tool for getting to know the REST methods.  Use it with the [API docs][api] to explore and learn how to unlock the power of the [open cloud][opencloud]! 
 
 
 [api]:http://docs.rackspace.com/ (API Docs)
 [curl]:http://curl.haxx.se/ (curl.haxx.se)
 [plugin]: https://addons.mozilla.org/en-us/firefox/addon/restclient/ (RestClient Plugin)
 [auth-request-api-doc]:http://docs.rackspace.com/servers/api/v2/cs-devguide/content/curl_auth.html (cloud servers dev guide)
-
+[opencloud]:http://www.rackspace.com/open-cloud/ (open cloud)
 
 [restclient-icon]: /img/restclient-icon.png (RestClient Icon)
 [restclient-newtab]: /img/restclient-newtab.png (new tab)
