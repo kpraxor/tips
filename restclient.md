@@ -1,6 +1,6 @@
 # Using RESTClient Firefox Plugin to Learn the RAX RESTful API
 
-Command-line tools like [curl][curl] allow you to sent HTTP(S) requests to [Rackspace's Public Cloud API][api], in order to interact directly.  But why not also try [RESTClient][plugin], a Firefox plugin?
+Command-line tools like [curl][curl] allow you to send HTTP(S) requests to [Rackspace's Public Cloud API][api], in order to interact directly.  But why not also try [RESTClient][plugin], a Firefox plugin?
 
 ## Install RESTClient Plugin
 You can install the RESTClient plugin from [addons.mozilla.org][plugin].  Restart Firefox, and you'll see the red icon with a circle appear. ![RESTClient Icon][restclient-icon]
@@ -71,17 +71,20 @@ You can use either the following combinations
 Since we've already been using the API key, I'll use that.  If you'd rather use your username and password, refer to the [Authentication Request][auth-request-api-doc] section of our API guide at [docs.rackspce.com][api]
 
 ### POST to /tokens
-Replace the `username` value `MyRackspaceAcct` below with your username and the `apiKey` value `0000000000000000000` with your API key, and paste the JSON "auth" object into the Request Body
-
-`{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"MyRackspaceAcct", "apiKey":"0000000000000000000"}}}`
 
 Before we `POST` this, let's add another header to tell the API we want a JSON response:
+
 ![accept-json-header][accept-json-header]
 
 and one that indicates we'll be sending a JSON request:
+
 ![content-type-json][content-type-json]
 
-Make sure to select "POST" and click "SEND" to
+Replace the `username` value `MyRackspaceAcct` below with your username and the `apiKey` value `0000000000000000000` with your API key, then copy it to your clipboard.
+
+`{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"MyRackspaceAcct", "apiKey":"0000000000000000000"}}}`
+
+Now, paste the JSON "auth" object into the Request Body, make sure to select "POST" and click "SEND" to
 
 `https://identity.api.rackspacecloud.com/v2.0/tokens`
 
